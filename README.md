@@ -10,11 +10,11 @@ The algorithm takes an image like in Figure 1 and applies the Canny Edge Detecti
 
 Figure 1: Original Image   | Figure 2: Canny Edge Detection
 :-------------------------:|:-------------------------:
-<img src="test_images/solidYellowCurve.jpg" width="480" alt="Combined Image"/> | ![alt-text-2](canny_example.png "Figure 2: Canny Edge Detected Image")
+<img src="test_images/solidYellowCurve.jpg" width="480" alt="Combined Image"/> | ![alt-text-2](examples/canny_example.png "Figure 2: Canny Edge Detected Image")
 
 Figure 3: Region of Interest           |  Figure 4: Lane Detected Image
 :-------------------------:|:-------------------------:
- ![alt-text-2](masked_example.png "Figure 3: Region of Interest") |  ![alt-text-2](marked_lanes_example.png "Figure 3: Lane Detected Image") 
+ ![alt-text-2](examples/masked_example.png "Figure 3: Region of Interest") |  ![alt-text-2](examples/marked_lanes_example.png "Figure 3: Lane Detected Image") 
 
 #### Summary of Algorithm to Find Lane Lines on Images:
 1. Change image to gray scale
