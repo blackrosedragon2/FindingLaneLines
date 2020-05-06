@@ -6,15 +6,7 @@ When we drive, the lines on the road are the visual reference we use to steer ve
 ### Algorithm Overview
 A pipeline was developed to process single images and overlay the detected lane lines. This pipeline was then applied to a video stream, which is only a collection of images. The foundation of this algorithm rest on the ability to detect edges of an image, in other words, extract just its outlines.
 
-The algorithm takes an image like in Figure 1 and applies the Canny Edge Detection filter. In Figure 2 you are able to see edges of the lane markings on the road after applying the filter. In addition, you can also see the edges of the rest of the scene. These edges aren't important. A mask is applied to isolate the region of interest. This is shown in Figure 3. From this filtered image we determine which white pixels are part of the same line by using Hough space. The Hough Transform is applied, and sets of endpoints describing lines along the lane are obtained. These are grouped by their slopes into left and right lane lanes, averaged and then extrapolated to extend over the length of the visible lane as shown in Figure 4.
-
-Figure 1: Original Image   | Figure 2: Canny Edge Detection
-:-------------------------:|:-------------------------:
-<img src="test_images/solidYellowCurve.jpg" width="480" alt="Combined Image"/> | ![alt-text-2](examples/canny_example.png "Figure 2: Canny Edge Detected Image")
-
-Figure 3: Region of Interest           |  Figure 4: Lane Detected Image
-:-------------------------:|:-------------------------:
- ![alt-text-2](examples/masked_example.png "Figure 3: Region of Interest") |  ![alt-text-2](examples/marked_lanes_example.png "Figure 3: Lane Detected Image") 
+The algorithm takes an image like in Figure 1 and applies the Canny Edge Detection filter. In Figure 2 you are able to see edges of the lane markings on the road after applying the filter. In addition, you can also see the edges of the rest of the scene. These edges aren't important. A mask is applied to isolate the region of interest. This is shown in Figure 3. From this filtered image we determine which white pixels are part of the same line by using Hough space. The Hough Transform is applied, and sets of endpoints describing lines along the lane are obtained. These are grouped by their slopes into left and right lane lanes, after taking the mean of their slopes and calculating ymin and ymax I then drew a line between them.
 
 #### Summary of Algorithm to Find Lane Lines on Images:
 1. Change image to gray scale
@@ -26,7 +18,7 @@ Figure 3: Region of Interest           |  Figure 4: Lane Detected Image
 7. Draw extrapolated lines to extend over the detected lane markings
 
 ### Results
-The Jupyter Notebook <A HREF="" target="_blank">**`P1.ipynb`**</A> contains the code
+The Jupyter Notebook <A HREF="https://github.com/blackrosedragon2/FindingLaneLines/blob/master/P1.ipynb" target="_blank">**`P1.ipynb`**</A> contains the code
 to find lane lines and has some example output images. It also contains a *Reflection* section where the algorithm robustness is discussed in detail.
 
 ### Useful References
